@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">게임제작 프로젝트</string>
+    <string name="action_settings">settings</string>
+    <string name="maincomment">설정</string>
+    <string name="reporterror">에러 저장 실패</string>
+    <string name="Notify">알림</string>
+
+</resources>

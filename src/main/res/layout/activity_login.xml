@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:gravity="center_vertical|center_horizontal">
+
+    <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:padding="10dp"
+            android:layout_centerHorizontal="true"
+            android:hint="ID"
+            android:id="@+id/IDedittext" />
+    <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="0dp"
+            android:text="Login"
+            android:textColor="#FFFFFF"
+            android:id="@+id/LoginButton"
+            android:textAllCaps="false"
+            android:layout_toEndOf="@id/IDedittext"
+            android:background="@drawable/roundrect"
+            android:layout_marginLeft="20dp"/>
+    <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:padding="10dp"
+            android:layout_centerHorizontal="true"
+            android:hint="Password"
+            android:layout_alignBottom="@id/LoginButton"
+            android:id="@+id/PWedittext" />
+
+</RelativeLayout>
