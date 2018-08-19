@@ -12,7 +12,8 @@ public final class R {
         public static final int alpha=0x7f040000;
         public static final int anim_layout_controller=0x7f040001;
         public static final int listanim=0x7f040002;
-        public static final int logoanim=0x7f040003;
+        public static final int listanimre=0x7f040003;
+        public static final int logoanim=0x7f040004;
     }
     public static final class attr {
     }
@@ -36,18 +37,20 @@ public final class R {
         public static final int choose=0x7f020002;
         public static final int ic_launcher=0x7f020003;
         public static final int intro=0x7f020004;
-        public static final int roundrect=0x7f020005;
-        public static final int roundrect_b=0x7f020006;
-        public static final int triangle=0x7f020007;
+        public static final int logo=0x7f020005;
+        public static final int roundrect=0x7f020006;
+        public static final int roundrect_b=0x7f020007;
+        public static final int triangle=0x7f020008;
     }
     public static final class id {
         public static final int IDedittext=0x7f0a0000;
         public static final int LoginButton=0x7f0a0001;
+        public static final int Logout=0x7f0a0005;
         public static final int PWedittext=0x7f0a0002;
         public static final int StartLogo=0x7f0a0004;
-        public static final int action_settings=0x7f0a0007;
-        public static final int backgroundimg=0x7f0a0005;
-        public static final int intro=0x7f0a0006;
+        public static final int action_settings=0x7f0a0008;
+        public static final int backgroundimg=0x7f0a0006;
+        public static final int intro=0x7f0a0007;
         public static final int mainbackground=0x7f0a0003;
     }
     public static final class layout {

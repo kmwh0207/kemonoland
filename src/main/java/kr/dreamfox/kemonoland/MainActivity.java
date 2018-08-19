@@ -24,6 +24,7 @@ import android.provider.Settings;
 import android.content.Context;
 import android.content.ComponentName;
 import android.view.animation.Animation;
+import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
@@ -32,7 +33,7 @@ import android.widget.TextView;
 //git config --global --unset credential.helper
 //--system
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements View.OnClickListener{
     
     static public MainActivity MainActivity;
     static public Sharedpref mpref; //설정파일
@@ -52,6 +53,12 @@ public class MainActivity extends Activity {
         Login.setComponent(new ComponentName("kr.dreamfox.kemonoland", "kr.dreamfox.kemonoland.LoginActivity"));
         //startActivityForResult(Login,LOGINCODE);
         //Toast.makeText(context,"로그인",Toast.LENGTH_LONG).show();
+        ImageView Mainbackground =(ImageView)findViewById(R.id.mainbackground);
+        TextView LogoutBt =(TextView)findViewById(R.id.Logout);
+        TextView Startlogo =(TextView)findViewById(R.id.StartLogo);
+        Mainbackground.setOnClickListener(this);
+        LogoutBt.setOnClickListener(this);
+        Startlogo.setOnClickListener(this);
     }
     
     public void onStart(Bundle b){
@@ -61,9 +68,26 @@ public class MainActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         
     }
-
-
     
+    public void onClick(View v) {
+        Toast.makeText(context,"click",Toast.LENGTH_LONG).show();
+		//ViewGroup MainScrTouch=(ViewGroup)findViewById(R.id.Mainscrtouch);
+		switch (v.getId()) {
+    		case R.id.mainbackground:
+    		    overridePendingTransition(R.anim.listanim,R.anim.listanimre);
+    		    Toast.makeText(context,"메인화면터치",Toast.LENGTH_LONG).show();
+    			//Intent menu = new Intent(;
+    			startActivityForResult(Login,LOGINCODE);
+    			break;
+    		case R.id.Logout:
+    			startActivityForResult(Login,LOGINCODE);
+    			Toast.makeText(context,"로그아웃터치",Toast.LENGTH_LONG).show();
+    			break;
+    		default:
+    		    Toast.makeText(context,"알수없는",Toast.LENGTH_LONG).show();
+    			break;
+		}
+	}    
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -78,7 +102,7 @@ public class MainActivity extends Activity {
 	            
 		if( hasFocus ) {
         	context = this.getApplicationContext();
-        	//Toast.makeText(context,"로그인 완료",Toast.LENGTH_LONG).show();
+        	Toast.makeText(context,"로그인 완료",Toast.LENGTH_LONG).show();
         	Thread.setDefaultUncaughtExceptionHandler(new UncaughtExceptionHandlerApplication(this.getApplicationContext()));
         	
         	Startlogo = (TextView)findViewById(R.id.StartLogo);
@@ -98,7 +122,7 @@ public class MainActivity extends Activity {
                     try{
                         View focusview;
                 	    if((focusview=getCurrentFocus()) != null){
-                	        if(focusview.getId() != Startlogo.getId()){
+                	        if(focusview.getId() == Startlogo.getId()){
                 	            Startlogo.startAnimation(logoImpact);
                 	        }
                         }else{
