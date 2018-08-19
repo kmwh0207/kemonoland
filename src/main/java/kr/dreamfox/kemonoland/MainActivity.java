@@ -40,6 +40,7 @@ public class MainActivity extends Activity {
     static public Context context;
     static final int LOGINCODE = 1;
     protected TextView Startlogo;
+    Animation logoImpact;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,13 +75,14 @@ public class MainActivity extends Activity {
     @Override
 	public void onWindowFocusChanged(boolean hasFocus) {
 	    super.onWindowFocusChanged(hasFocus);
+	            
 		if( hasFocus ) {
         	context = this.getApplicationContext();
-        	Toast.makeText(context,"로그인 완료",Toast.LENGTH_LONG).show();
+        	//Toast.makeText(context,"로그인 완료",Toast.LENGTH_LONG).show();
         	Thread.setDefaultUncaughtExceptionHandler(new UncaughtExceptionHandlerApplication(this.getApplicationContext()));
         	
         	Startlogo = (TextView)findViewById(R.id.StartLogo);
-        	Animation logoImpact = AnimationUtils.loadAnimation(this,R.anim.logoanim);
+        	final Animation logoImpact = AnimationUtils.loadAnimation(this,R.anim.logoanim);
             logoImpact.setAnimationListener(new Animation.AnimationListener(){
                 @Override
                 public void onAnimationStart(Animation arg0) {
@@ -92,16 +94,34 @@ public class MainActivity extends Activity {
                 }           
                 @Override
                 public void onAnimationEnd(Animation arg0) {
-    
+                    //터치이벤트로 포커스 얻을경우 중단시킬것
+                    try{
+                        View focusview;
+                	    if((focusview=getCurrentFocus()) != null){
+                	        if(focusview.getId() != Startlogo.getId()){
+                	            Startlogo.startAnimation(logoImpact);
+                	        }
+                        }else{
+                                        //Startlogo.startAnimation(logoImpact);
+                        }
+                    }catch(Exception ex){
+                        Toast.makeText(context,"포커스 에러",Toast.LENGTH_LONG).show();
+                    }
+                    //MainActivity.animcheck();
                     //intro1.putBooleanExtra("finish",false);
                     //intent.putExtra("isfinish",String.valueOf(editText.getText()));
-                   
                 }
             });
-            logoImpact.setRepeatCount(Animation.INFINITE);
-            logoImpact.setRepeatMode(Animation.RESTART);
+            //logoImpact.setRepeatCount(Animation.INFINITE);
+            //logoImpact.setRepeatMode(Animation.RESTART);
             Startlogo.startAnimation(logoImpact);
 		}
+	}
+	public void animcheck(){
+	    //View focusview = MainActivity.getCurrentFocus();
+	    
+
+                    
 	}
     
 }

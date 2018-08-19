@@ -17,10 +17,11 @@ int drawable triangle 0x7f020007
 int id IDedittext 0x7f0a0000
 int id LoginButton 0x7f0a0001
 int id PWedittext 0x7f0a0002
-int id StartLogo 0x7f0a0003
-int id action_settings 0x7f0a0006
-int id backgroundimg 0x7f0a0004
-int id intro 0x7f0a0005
+int id StartLogo 0x7f0a0004
+int id action_settings 0x7f0a0007
+int id backgroundimg 0x7f0a0005
+int id intro 0x7f0a0006
+int id mainbackground 0x7f0a0003
 int layout activity_login 0x7f030000
 int layout activity_main 0x7f030001
 int layout chat 0x7f030002

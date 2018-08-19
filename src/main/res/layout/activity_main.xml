@@ -7,26 +7,25 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#FF212121">
-    <TextView 
-        android:id="@+id/StartLogo"
-        android:textSize="20sp"
-        android:layout_margin="5dp"
-        android:padding="10dp"
-        android:text="Start Story"
-        android:textColor="#FFFFFFFF"
-        android:layout_width="wrap_content" 
-        android:layout_height="wrap_content" 
-        android:ellipsize="marquee"
-        android:focusable="true"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:singleLine="true"
-        android:drawableBottom="@drawable/roundrect_b"
-        android:drawablePadding="5dip"
-    />
     <ImageView 
+        android:id="@+id/mainbackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/roundrect_b"
-        android:visibility="invisible"
+        android:visibility="visible"
     />
+    <TextView 
+        android:id="@+id/StartLogo"
+        android:layout_alignBottom="@id/mainbackground"
+        android:textSize="20sp"
+        android:padding="2dp"
+        android:text="Start Story"
+        android:textColor="#FFFFFFFF"
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+        android:focusable="false"
+        android:focusableInTouchMode="true"
+        android:background="@drawable/roundrect_b" 
+    />
+
 </RelativeLayout>
