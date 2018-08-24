@@ -48,7 +48,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        mpref = Sharedpref.getInstance(this);
+        mpref = Sharedpref.getInstance("pref",this);
         Login = new Intent();
         Login.setComponent(new ComponentName("kr.dreamfox.kemonoland", "kr.dreamfox.kemonoland.LoginActivity"));
         //startActivityForResult(Login,LOGINCODE);
@@ -126,7 +126,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 	            Startlogo.startAnimation(logoImpact);
                 	        }
                         }else{
-                                        //Startlogo.startAnimation(logoImpact);
+                            
+                          //Startlogo.startAnimation(logoImpact);
                         }
                     }catch(Exception ex){
                         Toast.makeText(context,"포커스 에러",Toast.LENGTH_LONG).show();

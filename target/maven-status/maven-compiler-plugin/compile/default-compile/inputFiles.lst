@@ -4,11 +4,13 @@
 /projects/kemonoland/src/main/java/kr/dreamfox/kemonoland/Characterview.java
 /projects/kemonoland/src/main/java/kr/dreamfox/kemonoland/Intro.java
 /projects/kemonoland/src/main/java/kr/dreamfox/kemonoland/MenuActivity.java
+/projects/kemonoland/src/main/java/kr/dreamfox/kemonoland/ProfileDbHelper.java
 /projects/kemonoland/target/generated-sources/r/kr/dreamfox/kemonoland/R.java
 /projects/kemonoland/src/main/java/kr/dreamfox/kemonoland/MainActivity.java
 /projects/kemonoland/src/main/java/kr/dreamfox/kemonoland/LoginActivity.java
 /projects/kemonoland/src/main/java/kr/dreamfox/kemonoland/UncaughtExceptionHandlerApplication.java
 /projects/kemonoland/src/main/java/kr/dreamfox/kemonoland/Mapview.java
 /projects/kemonoland/src/main/java/kr/dreamfox/kemonoland/Loadimg.java
+/projects/kemonoland/src/main/java/kr/dreamfox/kemonoland/GameLoad.java
 /projects/kemonoland/src/main/java/kr/dreamfox/kemonoland/Logsave.java
 /projects/kemonoland/src/main/java/kr/dreamfox/kemonoland/Introview.java
