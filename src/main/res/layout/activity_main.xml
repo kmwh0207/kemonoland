@@ -11,22 +11,11 @@
         android:id="@+id/mainbackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/roundrect_b"
+        android:background="@drawable/mainbg"
         android:visibility="visible"
         android:focusableInTouchMode="true"
     />
-    <TextView 
-        android:id="@+id/StartLogo"
-        android:layout_alignBottom="@id/mainbackground"
-        android:textSize="20sp"
-        android:padding="10dp"
-        android:text="Start Story"
-        android:textColor="#FFFFFFFF"
-        android:layout_width="wrap_content" 
-        android:layout_height="wrap_content" 
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-    />
+    
     <TextView 
         android:id="@+id/Logout"
         android:layout_alignTop="@id/mainbackground"
@@ -39,6 +28,18 @@
         android:background="@drawable/roundrect_b" 
         android:focusableInTouchMode="true"
     />
-
+    
+    <TextView 
+        android:id="@+id/StartLogo"
+        android:layout_alignBottom="@id/mainbackground"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:text="Start Story"
+        android:textColor="#FFFFFFFF"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+    />
 
 </RelativeLayout>

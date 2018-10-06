@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#4F212121">
+    <ImageView 
+        android:id="@+id/mainbackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/mainbg"
+        android:scaleType="centerInside"
+        android:visibility="invisible"
+    />
+
+    <ListView
+         android:id="@+id/modeitem"
+         android:layout_height="wrap_content"
+         android:layout_width="100dp"
+         android:textSize="10sp"
+         android:divider="#00000000"
+         android:dividerHeight="1dp"
+         android:choiceMode="singleChoice"
+         android:background="@drawable/roundrect"
+         android:persistentDrawingCache="animation|scrolling"
+         android:listSelector="@drawable/chooseitem" 
+         android:stackFromBottom="false"
+         android:layoutAnimation="@anim/anim_layout_controller"/>
+</RelativeLayout>

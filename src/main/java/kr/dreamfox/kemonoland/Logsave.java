@@ -10,7 +10,7 @@ import android.widget.Toast;
 import android.content.Context;
 
 public class Logsave {
-    static String path = Environment.getExternalStorageDirectory().getAbsolutePath();
+    static String path = Environment.getDataDirectory().getAbsolutePath()+File.separator;
     
     public Logsave(){
         
@@ -63,7 +63,7 @@ public class Logsave {
            }
         }
         catch(Throwable a){
-            Toast.makeText(context,"디렉토리 생성 실패패",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context,"디렉토리 생성 실패",Toast.LENGTH_SHORT).show();
         }
     }
 }

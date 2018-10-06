@@ -1,5 +1,4 @@
 package kr.dreamfox.kemonoland;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -8,8 +7,18 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
+import android.os.Environment; 
+import java.io.File;
 
-public class ProfileDbHelper extends SQLiteOpenHelper {
+
+
+//http://blog.naver.com/PostView.nhn?blogId=tkddlf4209&logNo=220739962733&categoryNo=0&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView
+//이거 꼭 읽기
+
+//경로 바꾸기 http://caliou.tistory.com/156
+
+public class DbHelper extends SQLiteOpenHelper {
+ 
     
     public class ProfileContract{
         public class ProfileEntry implements BaseColumns{
@@ -17,6 +26,7 @@ public class ProfileDbHelper extends SQLiteOpenHelper {
             private ProfileEntry(){}
             
                 public static final String TABLE_NAME = "profiles";
+                public static final String _ID = "ID" ;
                 public static final String COLUMN_NAME_NAME = "name";
                 public static final String COLUMN_NAME_EMAIL = "email";
                 public static final String COLUMN_NAME_PHONE = "phone";
@@ -28,29 +38,41 @@ public class ProfileDbHelper extends SQLiteOpenHelper {
     //profiles 테이블 생성 구문 정의
     private static final String SQL_CREATE_PROFILE_TABLE =
         "create table " + ProfileContract.ProfileEntry.TABLE_NAME + " (" +
-        ProfileContract.ProfileEntry._ID + "integer primary key AUTOINCREMENT,"+
+        ProfileContract.ProfileEntry._ID + "text ,"+
         ProfileContract.ProfileEntry.COLUMN_NAME_NAME  + "text,"+
         ProfileContract.ProfileEntry.COLUMN_NAME_EMAIL + "text,"+
-        ProfileContract.ProfileEntry.COLUMN_NAME_PHONE + "text,"+ ")";
+        ProfileContract.ProfileEntry.COLUMN_NAME_PHONE + "text"+ ")";
         
     private static final int DB_VERSION = 1;
     private static final String DB_NAME = "profile.db";
+    
+    public static String File_path = Environment.getDataDirectory().getAbsolutePath()+ File.separator + R.string.app_name+ File.separator;
+    // public static String File_path = Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator + R.string.app_name+ File.separator;
     //아래거로 수정
-    public ProfileDbHelper(Context context, String name, CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public DbHelper(Context context, String name, CursorFactory factory, int version) {
+        super(context,File_path+name, factory, version);
+        
         // TODO Auto-generated constructor stub
     }
-    public ProfileDbHelper(Context context) {
+    public DbHelper(Context context, String name) {
+        super(context,File_path+name, null,DB_VERSION);
+        // TODO Auto-generated constructor stub
+    }
+    public DbHelper(Context context) {
         //super(context, name, factory, version);
-        super (context,"profile.db",null,DB_VERSION);
+        super (context,File_path+"profile.db",null,DB_VERSION);
         // TODO Auto-generated constructor stub
     }
+     
+    
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         // TODO Auto-generated method stub
         //테이블 생성 명령
         db.execSQL(SQL_CREATE_PROFILE_TABLE);
+        //테스트 코드
+        //db.execSQL("insert into "+ ProfileContract.ProfileEntry.TABLE_NAME +"("+ProfileContract.ProfileEntry.COLUMN_NAME_NAME+") values('굿햄')");
     }
 
     @Override
@@ -102,9 +124,8 @@ public class ProfileDbHelper extends SQLiteOpenHelper {
         //DB 테이블에 정보 삽입
         long rowId = db.insert(ProfileContract.ProfileEntry.TABLE_NAME, null, values);
         return rowId;
-        }
-        
     }
+        
     private String getStringFromCursor(Cursor cursor, String columnName){
         
         return cursor.getString(cursor.getColumnIndexOrThrow(columnName));

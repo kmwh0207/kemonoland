@@ -25,8 +25,8 @@ import android.content.Context;
 import android.content.ComponentName;
 
 public class LoginActivity extends Activity{
-    static char[] ID;
-    static char[] PW;
+    static String ID = "test";
+    static char[] PW = "Password".toCharArray();
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,10 +35,10 @@ public class LoginActivity extends Activity{
         
     }
 
-    private void successLogin(){
+    public void successLogin(View v){
         Intent account = new Intent();
-        account.putExtra("accountID",ID);
-        setResult(1,account);
+        account.putExtra("ID",ID);
+        setResult(RESULT_OK,account);
         //Activity.RESULT_OK
         finish();
     }

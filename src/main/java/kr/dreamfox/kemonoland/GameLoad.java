@@ -20,7 +20,7 @@ import java.util.Arrays;
 import net.openhft.compiler.CompilerUtils;
 
 public class GameLoad {
-    
+   /* 
      String className = "mypackage.MyClass";
      String javaCode = "package mypackage;\n" +
                       "public class MyClass implements Runnable {\n" +
@@ -37,5 +37,5 @@ public class GameLoad {
              
          }
      }
-
+*/
 }

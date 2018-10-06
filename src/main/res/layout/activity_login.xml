@@ -26,7 +26,8 @@
             android:textAllCaps="false"
             android:layout_toEndOf="@id/IDedittext"
             android:background="@drawable/roundrect"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="20dp"
+            android:onClick="successLogin"/>
     <EditText
             android:layout_width="200dp"
             android:layout_height="wrap_content"

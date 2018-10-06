@@ -30,13 +30,29 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             >
         </activity>
-        <activity android:name=".MenuActivity"
+        
+        <activity android:name=".GameSelector"
             android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             >
         </activity>
         
+        <activity android:name=".Registration"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            >
+        </activity>
+        
+              
+        <provider
+            android:authorities="kr.dreamfox.kemonoland.Contentprovider"
+            android:name="kr.dreamfox.kemonoland.Contentprovider"
+            android:exported="true">
+        </provider>
+            
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.INTERNET" />
 

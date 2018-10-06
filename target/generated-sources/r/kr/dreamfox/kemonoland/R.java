@@ -35,29 +35,36 @@ public final class R {
         public static final int bluebutton=0x7f020000;
         public static final int chatedge=0x7f020001;
         public static final int choose=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int intro=0x7f020004;
-        public static final int logo=0x7f020005;
-        public static final int roundrect=0x7f020006;
-        public static final int roundrect_b=0x7f020007;
-        public static final int triangle=0x7f020008;
+        public static final int chooseitem=0x7f020003;
+        public static final int ic_launcher=0x7f020004;
+        public static final int intro=0x7f020005;
+        public static final int logo=0x7f020006;
+        public static final int mainbg=0x7f020007;
+        public static final int normalitem=0x7f020008;
+        public static final int presseditem=0x7f020009;
+        public static final int roundrect=0x7f02000a;
+        public static final int roundrect_b=0x7f02000b;
+        public static final int triangle=0x7f02000c;
     }
     public static final class id {
         public static final int IDedittext=0x7f0a0000;
         public static final int LoginButton=0x7f0a0001;
-        public static final int Logout=0x7f0a0005;
+        public static final int Logout=0x7f0a0004;
         public static final int PWedittext=0x7f0a0002;
-        public static final int StartLogo=0x7f0a0004;
-        public static final int action_settings=0x7f0a0008;
+        public static final int StartLogo=0x7f0a0005;
+        public static final int action_settings=0x7f0a0009;
         public static final int backgroundimg=0x7f0a0006;
-        public static final int intro=0x7f0a0007;
+        public static final int intro=0x7f0a0008;
         public static final int mainbackground=0x7f0a0003;
+        public static final int modeitem=0x7f0a0007;
     }
     public static final class layout {
         public static final int activity_login=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int chat=0x7f030002;
-        public static final int intro=0x7f030003;
+        public static final int gameselector=0x7f030003;
+        public static final int intro=0x7f030004;
+        public static final int registration=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f090000;

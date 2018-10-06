@@ -33,15 +33,18 @@ import android.widget.TextView;
 //git config --global --unset credential.helper
 //--system
 
+//ㄴ리스트뷰 다양한 옵션들 http://recipes4dev.tistory.com/47
 public class MainActivity extends Activity implements View.OnClickListener{
     
     static public MainActivity MainActivity;
     static public Sharedpref mpref; //설정파일
     static private Intent Login;
+    static private Intent ModeSelect;
     static public Context context;
     static final int LOGINCODE = 1;
     protected TextView Startlogo;
     Animation logoImpact;
+    static String ID = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,8 +52,11 @@ public class MainActivity extends Activity implements View.OnClickListener{
         setContentView(R.layout.activity_main);
         
         mpref = Sharedpref.getInstance("pref",this);
-        Login = new Intent();
-        Login.setComponent(new ComponentName("kr.dreamfox.kemonoland", "kr.dreamfox.kemonoland.LoginActivity"));
+        Login = new Intent(MainActivity.this,LoginActivity.class);
+        //Login.setComponent(new ComponentName("kr.dreamfox.kemonoland", "kr.dreamfox.kemonoland.LoginActivity"));
+        
+        ModeSelect = new Intent(MainActivity.this,GameSelector.class);
+       
         //startActivityForResult(Login,LOGINCODE);
         //Toast.makeText(context,"로그인",Toast.LENGTH_LONG).show();
         ImageView Mainbackground =(ImageView)findViewById(R.id.mainbackground);
@@ -64,9 +70,16 @@ public class MainActivity extends Activity implements View.OnClickListener{
     public void onStart(Bundle b){
         
     }
-    
+   
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        
+        if(resultCode == RESULT_OK){
+        switch (requestCode){
+            case LOGINCODE :
+                //LOGINCODE = 0;
+                ID = data.getStringExtra("ID");
+                break;
+            }
+        }
     }
     
     public void onClick(View v) {
@@ -77,7 +90,13 @@ public class MainActivity extends Activity implements View.OnClickListener{
     		    overridePendingTransition(R.anim.listanim,R.anim.listanimre);
     		    Toast.makeText(context,"메인화면터치",Toast.LENGTH_LONG).show();
     			//Intent menu = new Intent(;
-    			startActivityForResult(Login,LOGINCODE);
+    			if(ID == null){
+    			    startActivityForResult(Login,LOGINCODE);
+    			}
+    			else{
+        		    startActivityForResult(ModeSelect,LOGINCODE);
+    			}
+
     			break;
     		case R.id.Logout:
     			startActivityForResult(Login,LOGINCODE);
@@ -89,6 +108,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
 		}
 	}    
     
+   
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -96,6 +116,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         return true;
     }
     
+   
     @Override
 	public void onWindowFocusChanged(boolean hasFocus) {
 	    super.onWindowFocusChanged(hasFocus);
@@ -148,6 +169,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
                     
 	}
+	
     
 }
 
